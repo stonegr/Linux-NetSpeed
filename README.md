@@ -3,7 +3,7 @@
 wget -N --no-check-certificate "https://raw.githubusercontent.com/stonegr/wdjs/master/tcp.sh"
 chmod +x tcp.sh
 ./tcp.sh
-```
+
 预先准备
 centos：yum install ca-certificates wget -y && update-ca-trust force-enable
 debian/ubuntu：apt-get install ca-certificates wget -y && update-ca-certificates
@@ -88,3 +88,4 @@ https://zh.wikipedia.org/zh/Ubuntu
 https://wiki.ubuntu.com/Releases
 https://wiki.debian.org/LTS
 https://wiki.centos.org/zh/About/Product
+```
