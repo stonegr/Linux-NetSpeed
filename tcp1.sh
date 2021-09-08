@@ -62,7 +62,7 @@ installbbrplus(){
 	elif [[ "${release}" == "debian" || "${release}" == "ubuntu" ]]; then
 		mkdir bbrplus && cd bbrplus
 		wget -N --no-check-certificate https://gh.api.99988866.xyz/http://${github}/bbrplus/debian-ubuntu/${bit}/linux-headers-${kernel_version}.deb
-		wget -N --no-check-certificate https://gh.api.99988866.xyz/http://${github}/bbrplus/debian-ubuntu/${bit}/linux-image-${kernel_version}.deb
+		wget -N --no-check-certificate https://ghproxy.com/http://${github}/bbrplus/debian-ubuntu/${bit}/linux-image-${kernel_version}.deb
 		dpkg -i linux-headers-${kernel_version}.deb
 		dpkg -i linux-image-${kernel_version}.deb
 		cd .. && rm -rf bbrplus
