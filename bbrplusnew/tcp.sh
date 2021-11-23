@@ -425,8 +425,10 @@ installxanmod() {
 #2021.9.2 再次改为https://github.com/UJX6N/bbrplus-5.10
 
 installbbrplusnew() {
-    github_ver_plus=$(curl -s https://api.github.com/repos/UJX6N/bbrplus-5.10/releases | grep /bbrplus-5.10/releases/tag/ | head -1 | awk -F "[/]" '{print $8}' | awk -F "[\"]" '{print $1}')
-    github_ver_plus_num=$(curl -s https://api.github.com/repos/UJX6N/bbrplus-5.10/releases | grep /bbrplus-5.10/releases/tag/ | head -1 | awk -F "[/]" '{print $8}' | awk -F "[\"]" '{print $1}' | awk -F "[-]" '{print $1}')
+    # github_ver_plus=$(curl -s https://api.github.com/repos/UJX6N/bbrplus-5.10/releases | grep /bbrplus-5.10/releases/tag/ | head -1 | awk -F "[/]" '{print $8}' | awk -F "[\"]" '{print $1}')
+    # github_ver_plus_num=$(curl -s https://api.github.com/repos/UJX6N/bbrplus-5.10/releases | grep /bbrplus-5.10/releases/tag/ | head -1 | awk -F "[/]" '{print $8}' | awk -F "[\"]" '{print $1}' | awk -F "[-]" '{print $1}')
+    github_ver_plus='5.10.79-bbrplus'
+    github_ver_plus_num='5.10.79'
     echo -e "获取的UJX6N的bbrplus-5.10版本号为:${github_ver_plus}"
     echo -e "如果下载地址出错，可能当前正在更新，超过半天还是出错请反馈，大陆自行解决污染问题"
     echo -e "安装失败这边反馈，内核问题给UJX6N反馈"
@@ -500,6 +502,8 @@ installbbrplusnew() {
             # imgurl='https://github.com/UJX6N/bbrplus-5.10/releases/download/5.10.79-bbrplus/Debian-Ubuntu_Required_linux-image-5.10.79-bbrplus_5.10.79-bbrplus-1_amd64.deb'
             headurl='https://github.com/stonegr/wdjs/raw/master/bbrplusnew/linux-headers-d10.deb'
             imgurl='https://github.com/stonegr/wdjs/raw/master/bbrplusnew/linux-image-d10.deb'
+            kernel_version=${github_ver_plus_num}-bbrplus
+            detele_kernel_head
             wget -N -O linux-headers-d10.deb $headurl
             wget -N -O linux-image-d10.deb $imgurl
             dpkg -i linux-image-d10.deb
